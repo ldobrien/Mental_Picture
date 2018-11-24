@@ -12,7 +12,7 @@ module.exports = (tel = '', body = '', from = {}, to = {}, callback) => {
 	callback(
 		null,
 		[
-			`This is the MORE handler for your Twilio Messaging Hub on StdLib`,
+			`\nThis is the MORE handler for your Twilio Messaging Hub on StdLib`,
 			``,
 			`You can customize its behavior in /functions/messaging/more.js`
 		].join('\n')

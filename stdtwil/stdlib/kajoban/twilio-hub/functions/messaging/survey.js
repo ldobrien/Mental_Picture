@@ -6,7 +6,7 @@ module.exports = (tel = '', body = '', from = {}, to = {}, callback) => {
 	callback(
 		null,
 		[
-			``,
+			`\n`,
 			`This is the start of the survey`,
 			``,
 			`On a scale of 1 to 5 how do you feel today?`,
