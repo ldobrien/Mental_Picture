@@ -11,12 +11,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header center green">
           WACK HESTERN
-          <Mood />
-          <Sleep />
+        </header>
+        <div className="container">
+        <Mood />
+        <Sleep />
           <Diet />
           <Activity />
-
-        </header>
+        </div>
       </div>
     );
   }
