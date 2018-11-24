@@ -4,7 +4,8 @@
 
 module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callback) => {
 
-	// We didn't find a command or match anything
+	console.log(body)
+	
 	return callback(
 		null,
 		`\nThank you for your response!`
