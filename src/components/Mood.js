@@ -3,18 +3,12 @@ import React, { Component } from 'react';
 // import React from 'react';
 import ReactDOM from 'react-dom';
 import * as V from 'victory';
-import { VictoryBar , VictoryChart, VictoryZoomContainer, VictoryLine, VictoryBrushContainer, VictoryAxis } from 'victory';
+import { VictoryBar , VictoryChart, VictoryZoomContainer, VictoryLine, VictoryTheme, VictoryAxis, VictoryLabel } from 'victory';
 
 class Mood extends Component {
     state = {
 
     }
-    // state ={
-    //     data: [12, 5, 6, 6, 9, 10],
-    //     height: 300,
-    //     width: 700,
-    //     color: "pink"
-    // }
 
     handleZoom(domain) {
         this.setState({
@@ -31,7 +25,7 @@ class Mood extends Component {
     render(){
         return(
             <div>
-          <VictoryChart width={600} height={350} scale={{x: "time"}}
+          <VictoryChart width={600} height={350} scale={{x: "time"}} theme={VictoryTheme.material}
             containerComponent={
               <VictoryZoomContainer responsive={false}
                 zoomDimension="x"
@@ -40,6 +34,9 @@ class Mood extends Component {
               />
             }
           >
+            <VictoryLabel text="Title" x={300} y={30} textAnchor="middle"/>
+            <VictoryAxis label="x-axis" style={{ axisLabel: {padding: 30}}}/>
+            <VictoryAxis dependentAxis label="y-axis" style={{ axisLabel: {padding: 40}}}/>
             <VictoryLine
               style={{
                 data: {stroke: "green"}
@@ -58,7 +55,7 @@ class Mood extends Component {
 
           </VictoryChart>
 
-          <VictoryChart
+          {/* <VictoryChart
             padding={{top: 0, left: 50, right: 50, bottom: 30}}
             width={600} height={90} scale={{x: "time"}}
             containerComponent={
@@ -95,7 +92,7 @@ class Mood extends Component {
                 {x: new Date(2015, 1, 1), y: 470}
               ]}
             />
-          </VictoryChart>
+          </VictoryChart> */}
       </div>
         )
     }

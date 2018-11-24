@@ -3,6 +3,7 @@ import Mood from './components/Mood';
 import Sleep from './components/Sleep';
 import Diet from './components/Diet';
 import Activity from './components/Activity';
+import { VictoryContainer } from 'victory'
 
 
 class App extends Component {
@@ -12,11 +13,22 @@ class App extends Component {
         <header className="App-header center green">
           WACK HESTERN
         </header>
-        <div className="container">
+        <div class="row">
+        <div class="col s12 m6">
         <Mood />
+        </div>
+        <div class="col s12 m6">
         <Sleep />
-          <Diet />
-          <Activity />
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <Diet/>
+          </div>
+          <div class="col s12 m6">
+            <Activity/>
+          </div>
         </div>
       </div>
     );
