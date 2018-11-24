@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
-class Mood extends Component {
+class Diet extends Component {
     state ={
         data: []
     }
@@ -21,12 +21,10 @@ class Mood extends Component {
             .enter()
             .append("rect")
             .attr("x", (d, i) => i * 70)
-            .attr("y", (d, i) => 300 - 10 * d)
+             .attr("y", (d, i) => 300 - 10 * d)
             .attr("width", 65)
             .attr("height", (d, i) => d * 10)
-            .attr("fill", "pink")
-
-        
+            .attr("fill", "orange")
       }
 
     render(){
@@ -39,4 +37,4 @@ class Mood extends Component {
 
 }
 
-export default Mood;
+export default Diet;

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Mood from './components/Mood';
 import Sleep from './components/Sleep';
+import Diet from './components/Diet';
+import Activity from './components/Activity';
+
 
 class App extends Component {
   render() {
@@ -10,6 +13,9 @@ class App extends Component {
           WACK HESTERN
           <Mood />
           <Sleep />
+          <Diet />
+          <Activity />
+
         </header>
       </div>
     );
