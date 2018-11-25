@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       
-      <div>
+      <div >
       <head >
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         </ link>
@@ -54,19 +54,11 @@ class App extends Component {
       </ head>
       <body>
       <div className="App">
-      <nav>
-    <div class="nav-wrapper green darken-4">
-      <a href="#" class="brand-logo center"><i class="material-icons">camera_alt</i>MENTAL PICTURE</a>
-    </div>
-  </nav>
-      
-  {/* <ul id="slide-out" class="sidenav sidenav-fixed yellow lighten-4 padding-left: 300px">
-    
-    <li><a href="#"><i class="material-icons">home</i>Dashboard</a></li>
-    <li><a href="#contacts"><i class="material-icons">contact_phone</i>Contacts</a></li>
-    <li><a href="#notes"><i class="material-icons">create</i>Notes</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
+      <nav >
+        <div class="nav-wrapper green darken-4">
+          <a class="brand-logo center"><i class="material-icons">camera_alt</i>MENTAL PICTURE</a>
+        </div>
+      </nav>
 
       <div class="card-panel yellow lighten-4">
         <div class="row">
