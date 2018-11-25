@@ -35,8 +35,10 @@ class BarGraph extends Component {
             <VictoryLabel text={input.title} style ={{ fontSize: 30}} x={300} y={10} textAnchor="middle"/>
 
             <VictoryBar style={{ data: { fill: "green" } }} data={data} x="x" y="y"/>
-            <VictoryAxis label={input.xAxis} style ={{ fontSize: 25}} style={{ axisLabel: { fontSize: 15, padding: 35}}}/>
+
+            <VictoryAxis label={input.xAxis} style ={{ fontSize: 25}} style={{ axisLabel: { fontSize: 15, padding: 35}}} fixLabelOverlap/>
             <VictoryAxis dependentAxis label={input.yAxis} style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
+
             </VictoryChart>
           </div>
         )
