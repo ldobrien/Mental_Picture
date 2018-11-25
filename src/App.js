@@ -20,7 +20,7 @@ class App extends Component {
     .then(result => 
       // console.log(result)
         this.setState({
-            data: JSON.parse(result)
+            data: JSON.parse(result).reverse()
         })
     )
       
