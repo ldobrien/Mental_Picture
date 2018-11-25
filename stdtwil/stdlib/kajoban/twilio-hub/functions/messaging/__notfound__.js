@@ -9,8 +9,12 @@ module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callbac
 
 	if (regExMatch(body) == true){
 
+<<<<<<< HEAD
 		let json_obj = JSONMaker(body)
 
+=======
+		json_obj = JSONMaker(body)
+>>>>>>> parent of 206e05b... retreive list of entities
 		console.log(json_obj)
 
 		m.insertData(json_obj)

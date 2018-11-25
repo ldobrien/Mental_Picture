@@ -8,34 +8,6 @@ const url = 'mongodb+srv://western:Pass4now!@cluster0-otjkb.mongodb.net/test?ret
 const dbName = 'western';
 const client = new MongoClient(url);
 
-function getAll()
-{
-    client.connect(function(err){
-        assert.equal(null, err)
-        console.log("Connected successfully to server")
-        const db = client.db(dbName);
-        getDocuments(db, function(){
-            client.close();
-        });
-    });
-}
-
-const getDocuments = function(db, callback)
-{
-    const col = db.collection('hack');
-    col.find().sort({"obj.date":-1}).limit(10).toArray(function(err, res)
-    {
-        if(err){
-            console.log("ERROR: " + err)
-        } else {
-            console.log("Found the following records");
-            console.log(res)
-            return res;
-        }
-    });
-    
-}
-
 function getData(date)
 {
 // Use connect method to connect to the server
@@ -55,7 +27,7 @@ const findDocument = function(db, date, callback) {
     // Get the documents collection
     const col = db.collection('hack');
     // Find some documents
-    col.find({"obj.date": {$eq : date}}).toArray(function(err, res) {
+    col.find({"obj.date": { $eq : "2018-11-24"}}).toArray(function(err, res) {
         if(err){
             console.log("ERROR: " + err)
         } else {
@@ -123,12 +95,10 @@ let current = new Date().toLocaleString(undefined, {
 	month: 'numeric',
 	year: 'numeric'
 });
-
 let a =JSON.stringify(current);
 
 //insertData(`{"date": ${a}, "diet":5, "exercise":6, "sleep":12, "mood":4}`);
-//getData("2018-1-22");
-getAll();
+//getData("2018-11-24");
 
 module.exports.insertData = insertData;
 module.exports.getData = getData;
