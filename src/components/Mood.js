@@ -26,7 +26,7 @@ class Mood extends Component {
         const data = this.props.data;
         return(
             <div>
-          <VictoryChart width={600} height={300} scale={{x: "time"}} theme={VictoryTheme.material}
+          <VictoryChart width={650} height={300} scale={{x: "time"}} theme={VictoryTheme.material}
             containerComponent={
               <VictoryZoomContainer responsive={false}
                 zoomDimension="x"

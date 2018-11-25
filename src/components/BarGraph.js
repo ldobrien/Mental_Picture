@@ -24,7 +24,7 @@ class BarGraph extends Component {
 
         return(
             <div>
-            <VictoryChart width={600} height={300} domainPadding={20} theme={VictoryTheme.material} scale={{x: "time"}}
+            <VictoryChart width={650} height={300} domainPadding={20} theme={VictoryTheme.material} scale={{x: "time"}}
                 containerComponent={
                     <VictoryZoomContainer responsive={false}
                     zoomDimension="x"

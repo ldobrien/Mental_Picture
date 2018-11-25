@@ -14,9 +14,11 @@ class App extends Component {
   }
 
   componentDidMount(){
+    console.log("LOADED")
     fetch("https://kajoban.lib.id/twilio-hub@dev/readData/")
     .then((result) => result.json())
     .then(result => 
+      // console.log(result)
         this.setState({
             data: result
         })
@@ -35,7 +37,7 @@ class App extends Component {
     for(var elem of this.state.data){
       mood.push({x: elem.date, y: elem.mood});
       sleep.push({x: elem.date, y: elem.sleep});
-      diet.push({x: elem.date, y: elem.diet});
+      diet.push({x: elem.date, y: elem.diet/1000});
       activity.push({x: elem.date, y: elem.exercise});
     }
 
