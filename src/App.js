@@ -15,12 +15,12 @@ class App extends Component {
 
   componentDidMount(){
     console.log("LOADED")
-    fetch("https://kajoban.lib.id/twilio-hub@dev/readData/")
+    fetch("https://kajoban.lib.id/twilio-hub@dev/readDataMongo/")
     .then((result) => result.json())
     .then(result => 
       // console.log(result)
         this.setState({
-            data: result
+            data: JSON.parse(result)
         })
     )
       
@@ -35,10 +35,10 @@ class App extends Component {
     const diet = [];
     const activity = [];
     for(var elem of this.state.data){
-      mood.push({x: elem.date, y: elem.mood});
-      sleep.push({x: elem.date, y: elem.sleep});
-      diet.push({x: elem.date, y: elem.diet/1000});
-      activity.push({x: elem.date, y: elem.exercise});
+      mood.push({x: elem.obj.date, y: elem.obj.mood});
+      sleep.push({x: elem.obj.date, y: elem.obj.sleep});
+      diet.push({x: elem.obj.date, y: elem.obj.diet/1000});
+      activity.push({x: elem.obj.date, y: elem.obj.exercise});
     }
 
     return (
@@ -81,7 +81,7 @@ class App extends Component {
           <div class="col s12 m6">
           <div class="card-panel blue lighten-5">
             <Diet data={diet}/>
-          </ div>
+          </div>
           </div>
           <div class="col s12 m6">
           <div class="card-panel blue lighten-5">
