@@ -25,7 +25,7 @@ class App extends Component {
       <div className="App">
       <nav>
     <div class="nav-wrapper green darken-4">
-      <a href="#" class="brand-logo center">Mental Picture</a>
+      <a href="#" class="brand-logo center">MENTAL PICTURE</a>
     </div>
   </nav>
       
