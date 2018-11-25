@@ -8,7 +8,37 @@ import { VictoryContainer } from 'victory'
 
 
 class App extends Component {
+
+  state = {
+    data: [],
+  }
+
+  componentDidMount(){
+    fetch("https://kajoban.lib.id/twilio-hub@dev/readData/")
+    .then((result) => result.json())
+    .then(result => 
+        this.setState({
+            data: result
+        })
+    )
+      
+  }
+
   render() {
+    if(this.state.data.length === 0){
+      return <div></div>
+    }
+    const mood = [];
+    const sleep = [];
+    const diet = [];
+    const activity = [];
+    for(var elem of this.state.data){
+      mood.push({x: elem.date, y: elem.mood});
+      sleep.push({x: elem.date, y: elem.sleep});
+      diet.push({x: elem.date, y: elem.diet});
+      activity.push({x: elem.date, y: elem.exercise});
+    }
+
     return (
       
       <div>
@@ -41,12 +71,12 @@ class App extends Component {
         <div class="row">
         <div class="col s12 m6">
         <div class="card-panel blue lighten-5">
-        <Mood />
+        <Mood data={mood}/>
         </div>
         </div>
         <div class="col s12 m6">
         <div class="card-panel blue lighten-5">
-        <Sleep />
+        <Sleep data={sleep}/>
         </div>
         </div>
         </div>
@@ -55,12 +85,12 @@ class App extends Component {
         <div class="row">
           <div class="col s12 m6">
           <div class="card-panel blue lighten-5">
-            <Diet/>
+            <Diet data={diet}/>
           </ div>
           </div>
           <div class="col s12 m6">
           <div class="card-panel blue lighten-5">
-            <Activity/>
+            <Activity data={activity}/>
           </ div>
           </div>
         </div>
