@@ -26,7 +26,7 @@ class Mood extends Component {
         const data = this.props.data;
         return(
             <div>
-          <VictoryChart width={600} height={350} scale={{x: "time"}} theme={VictoryTheme.material}
+          <VictoryChart width={650} height={300} scale={{x: "time"}} theme={VictoryTheme.material}
             containerComponent={
               <VictoryZoomContainer responsive={false}
                 zoomDimension="x"
@@ -35,8 +35,8 @@ class Mood extends Component {
               />
             }
           >
-            <VictoryLabel text="Mood" style ={{ fontSize: 30}} x={300} y={10} textAnchor="middle"/>
-            <VictoryAxis label="Date" style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
+            <VictoryLabel text="Mood" style ={{ fontSize: 30}} x={300} y={10} textAnchor="middle" />
+            <VictoryAxis label="Date" style={{ axisLabel: {fontSize: 15, padding: 35}}} fixLabelOverlap/>
             <VictoryAxis dependentAxis label="Rating" style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
             <VictoryLine
               style={{

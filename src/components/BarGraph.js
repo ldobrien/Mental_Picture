@@ -24,7 +24,7 @@ class BarGraph extends Component {
 
         return(
             <div>
-            <VictoryChart width={600} height={350} domainPadding={20} theme={VictoryTheme.material} scale={{x: "time"}}
+            <VictoryChart width={650} height={300} domainPadding={20} theme={VictoryTheme.material} scale={{x: "time"}}
                 containerComponent={
                     <VictoryZoomContainer responsive={false}
                     zoomDimension="x"
@@ -36,8 +36,8 @@ class BarGraph extends Component {
 
             <VictoryBar style={{ data: { fill: "green" } }} data={data} x="x" y="y"/>
 
-            <VictoryAxis label={input.xAxis} style ={{ fontSize: 25}} style={{ axisLabel: { fontSize: 15, padding: 35}}} fixLabelOverlap/>
-            <VictoryAxis dependentAxis label={input.yAxis} style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
+             <VictoryAxis label={input.xAxis} style ={{ fontSize: 25}} style={{ axisLabel: { fontSize: 15, padding: 35}}} fixLabelOverlap/>
+             <VictoryAxis dependentAxis label={input.yAxis} style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
 
             </VictoryChart>
           </div>

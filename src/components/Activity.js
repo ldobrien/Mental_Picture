@@ -5,8 +5,6 @@ import BarGraph from "./BarGraph";
 class Activity extends Component {
     state ={
         data: this.props.data,
-        height: 300,
-        width: 700,
         title: "Activity",
         yAxis: "Hours",
         xAxis: "Date"

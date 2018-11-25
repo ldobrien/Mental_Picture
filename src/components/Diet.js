@@ -4,10 +4,8 @@ import BarGraph from "./BarGraph"
 class Diet extends Component {
     state ={
         data: this.props.data,
-        height: 300,
-        width: 700,
         title: "Diet",
-        yAxis: "Calories",
+        yAxis: "Calories (in thousands)",
         xAxis: "Date"
     }
 

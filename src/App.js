@@ -14,9 +14,11 @@ class App extends Component {
   }
 
   componentDidMount(){
+    console.log("LOADED")
     fetch("https://kajoban.lib.id/twilio-hub@dev/readData/")
     .then((result) => result.json())
     .then(result => 
+      // console.log(result)
         this.setState({
             data: result
         })
@@ -35,13 +37,13 @@ class App extends Component {
     for(var elem of this.state.data){
       mood.push({x: elem.date, y: elem.mood});
       sleep.push({x: elem.date, y: elem.sleep});
-      diet.push({x: elem.date, y: elem.diet});
+      diet.push({x: elem.date, y: elem.diet/1000});
       activity.push({x: elem.date, y: elem.exercise});
     }
 
     return (
       
-      <div>
+      <div >
       <head >
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         </ link>
@@ -54,19 +56,11 @@ class App extends Component {
       </ head>
       <body>
       <div className="App">
-      <nav>
-    <div class="nav-wrapper green darken-4">
-      <a href="#" class="brand-logo center"><i class="material-icons">camera_alt</i>MENTAL PICTURE</a>
-    </div>
-  </nav>
-      
-  {/* <ul id="slide-out" class="sidenav sidenav-fixed yellow lighten-4 padding-left: 300px">
-    
-    <li><a href="#"><i class="material-icons">home</i>Dashboard</a></li>
-    <li><a href="#contacts"><i class="material-icons">contact_phone</i>Contacts</a></li>
-    <li><a href="#notes"><i class="material-icons">create</i>Notes</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
+      <nav >
+        <div class="nav-wrapper green darken-4">
+          <a class="brand-logo center"><i class="material-icons">camera_alt</i>MENTAL PICTURE</a>
+        </div>
+      </nav>
 
       <div class="card-panel yellow lighten-4">
         <div class="row">
