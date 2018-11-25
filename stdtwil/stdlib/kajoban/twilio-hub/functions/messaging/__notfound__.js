@@ -1,13 +1,24 @@
+var regExMatch = require('../../helpers/regExMatch')
+var JSONMaker = require('../../helpers/JSONmaker')
 /**
-* Not found handler - handles all SMS / MMS that don't match a command
+* Not found handler - handles all SMS 
 */
 module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callback) => {
 
-	console.log(body)
+	if (regExMatch(body) == true){
 
-	return callback(
-		null,
-		`\nThank you for your response!`
-	);
+		json_obj = JSONMaker(body)
+		console.log(json_obj)
+
+		return callback(
+			null,
+			`\nThank you for your response!`
+		);
+	} else {
+		return callback(
+			null,
+			`\nError in response format. Please try again!`
+		);
+	}
 
 };
