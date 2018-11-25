@@ -44,9 +44,9 @@ class Mood extends Component {
               />
             }
           >
-            <VictoryLabel text="Mood" style ={{ fontSize: 30}} x={300} y={30} textAnchor="middle"/>
-            <VictoryAxis label="Date" style={{ axisLabel: {padding: 30}}}/>
-            <VictoryAxis dependentAxis label="Rating" style={{ axisLabel: {padding: 40}}}/>
+            <VictoryLabel text="Mood" style ={{ fontSize: 30}} x={300} y={10} textAnchor="middle"/>
+            <VictoryAxis label="Date" style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
+            <VictoryAxis dependentAxis label="Rating" style={{ axisLabel: {fontSize: 15, padding: 35}}}/>
 
             <VictoryLine
               style={{

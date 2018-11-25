@@ -82,6 +82,27 @@ client.connect(function(err) {
   });
 }
 
+function insertMany(arr){
+  client.connect(function(err){
+    assert.equal(null, err);
+    console.log("Connected successfully to server");
+
+    const db = client.db(dbName);
+
+    insertArr(db, arr, function(){
+      client.close();
+    });
+  });
+}
+
+const insertArr = function(db, data, callback){
+  const collection = db.collection('hack');
+
+  collection.insertMany(data, function(err, result){
+    console.log(result)
+  })
+}
+
 const insertDocuments = function(db, data,callback) {
     // Get the documents collection
     const collection = db.collection('hack');
@@ -111,4 +132,5 @@ getAll();
 
 module.exports.insertData = insertData;
 module.exports.getData = getData;
+module.exports.insertMany = insertMany;
 
