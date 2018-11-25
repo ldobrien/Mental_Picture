@@ -8,8 +8,8 @@ let m = require('../../helpers/mongo');
 module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callback) => {
 
 	if (regExMatch(body) == true){
-
 		let json_obj = JSONMaker(body)
+
 		console.log(json_obj)
 
 		m.insertData(json_obj)

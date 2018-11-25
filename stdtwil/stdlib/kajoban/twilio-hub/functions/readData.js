@@ -1,6 +1,5 @@
-let m = require('../helpers/mongo');
-
 module.exports = (callback) => {
+    
     callback(
 		null,
 		[{"date": "2018-01-01", "diet":1204, "exercise":3, "sleep":5, "mood":1},
