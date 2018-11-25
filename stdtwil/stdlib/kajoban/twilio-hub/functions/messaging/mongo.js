@@ -25,13 +25,17 @@ client.connect(function(err) {
 
 const findDocument = function(db, date, callback) {
     // Get the documents collection
-    const collection = db.collection('hack');
+    const col = db.collection('hack');
     // Find some documents
-    collection.find({date: date}).toArray((err, docs) => {
-      assert.equal(err, null);
-      console.log("Found the following records");
-      console.log(docs);
-    });
+    col.find({"obj.date": { $eq : "2018-11-24"}}).toArray(function(err, res) {
+        if(err){
+            console.log("ERROR: " + err)
+        } else {
+            console.log("Found the following records");
+            console.log(res)
+            return res;
+        }
+    })
   }
 
 
@@ -61,6 +65,7 @@ const insertDocuments = function(db, data,callback) {
       assert.equal(1, result.ops.length);
       console.log("Inserted 1 document into the collection");
       callback(result);
+      return result;
     });
 }
 
@@ -72,4 +77,8 @@ let current = new Date().toLocaleString(undefined, {
 let a =JSON.stringify(current);
 
 //insertData(`{"date": ${a}, "diet":5, "exercise":6, "sleep":12, "mood":4}`);
-getData("2018-11-24");
+//getData("2018-11-24");
+
+module.exports.insertData = insertData;
+module.exports.getData = getData;
+
