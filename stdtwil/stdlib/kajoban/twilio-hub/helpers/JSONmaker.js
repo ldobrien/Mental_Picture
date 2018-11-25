@@ -5,9 +5,6 @@ module.exports = (body) => {
         month: 'numeric',
         year: 'numeric'
     });
-
-    let date = JSON.stringify(current);
-    // yyyy-mm-dd
     
     val_list = body.split(',')
 
@@ -16,7 +13,7 @@ module.exports = (body) => {
     let sleep = val_list[1]
     let mood = val_list[0]
 
-    let json_obj = `{"date": ${date}, "diet":${diet}, "exercise":${exercise}, "sleep":${sleep}, "mood":${sleep}}`
+    let json_obj = `{"date": ${current}, "diet":${diet}, "exercise":${exercise}, "sleep":${sleep}, "mood":${sleep}}`
 
     return json_obj
 
