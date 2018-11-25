@@ -6,7 +6,8 @@ module.exports = (body) => {
         year: 'numeric'
     });
 
-    let date =JSON.stringify(current);
+    let date = JSON.stringify(current);
+    // yyyy-mm-dd
     
     val_list = body.split(',')
 
