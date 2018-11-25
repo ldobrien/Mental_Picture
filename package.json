@@ -5,8 +5,12 @@
   "dependencies": {
     "d3": "^5.7.0",
     "react": "^16.6.3",
+    "react-d3": "^0.4.0",
+    "react-d3-components": "^0.9.1",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-vis": "^1.11.5",
+    "victory": "^31.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

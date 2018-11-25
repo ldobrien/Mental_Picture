@@ -7,15 +7,17 @@ module.exports = (tel = '', body = '', from = {}, to = {}, callback) => {
 		null,
 		[
 			`\n`,
-			`This is the start of the survey`,
+			`Here is today's survey!`,
 			``,
-			`On a scale of 1 to 5 how do you feel today?`,
+			`How do you feel today (0-5)?`,
 			``,
-			`How many hours have you slept today?`,
+			`How many hours have you slept today (0-24)?`,
 			``,
-			`How many calories did you consume today?`,
+			`How many calories did you consume today (0-5000)?`,
 			``,
-			`How many hours have you worked out today?`
+			`How many hours have you worked out today (0-24)?`,
+			``,
+			`Please enter your answer in order in 'w,x,y,z' format.`
 		].join('\n')
 	);
 
