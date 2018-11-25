@@ -97,7 +97,6 @@ function getAll(callback)
         console.log("Connected successfully to server")
         const db = client.db(dbName);
         getDocuments(db, function(err, documents){
-            client.close();
             callback(null, documents);
         });
     });
