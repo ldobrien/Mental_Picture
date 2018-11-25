@@ -1,14 +1,18 @@
 var regExMatch = require('../../helpers/regExMatch')
 var JSONMaker = require('../../helpers/JSONmaker')
+let m = require('../../helpers/mongo');
 /**
 * Not found handler - handles all SMS 
+@returns {string}
 */
 module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callback) => {
 
 	if (regExMatch(body) == true){
 
-		json_obj = JSONMaker(body)
+		let json_obj = JSONMaker(body)
 		console.log(json_obj)
+
+		m.insertData(json_obj)
 
 		return callback(
 			null,

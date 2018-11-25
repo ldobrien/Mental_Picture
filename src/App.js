@@ -49,13 +49,14 @@ class App extends Component {
         </ link>
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection">
         </link>
+
       
       </ head>
       <body>
       <div className="App">
       <nav>
     <div class="nav-wrapper green darken-4">
-      <a href="#" class="brand-logo center">MENTAL PICTURE</a>
+      <a href="#" class="brand-logo center"><i class="material-icons">camera_alt</i>MENTAL PICTURE</a>
     </div>
   </nav>
       
