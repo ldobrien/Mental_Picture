@@ -47,14 +47,7 @@ class App extends Component {
       <head >
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         </ link>
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-        </ link>
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection">
-        </link>
-
-      
       </ head>
-      <body>
       <div className="App">
       <nav >
         <div class="nav-wrapper green darken-4">
@@ -62,7 +55,7 @@ class App extends Component {
         </div>
       </nav>
 
-      <div class="card-panel yellow lighten-4">
+      <div class="card-panel teal lighten-3">
         <div class="row">
         <div class="col s12 m6">
         <div class="card-panel blue lighten-5">
@@ -91,7 +84,6 @@ class App extends Component {
         </div>
       </div>
       </div>
-      </body>
       </div>
     );
   }
