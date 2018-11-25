@@ -7,7 +7,7 @@ module.exports = (tel = '', body = '', media = null, from = {}, to = {}, callbac
 
 	if (regExMatch(body) == true){
 
-		json_obj = JSONMaker(body)
+		let json_obj = JSONMaker(body)
 		console.log(json_obj)
 
 		return callback(
