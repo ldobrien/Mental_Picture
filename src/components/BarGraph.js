@@ -31,7 +31,7 @@ class BarGraph extends Component {
                     onZoomDomainChange={this.handleZoom.bind(this)} />
                 }
             >
-            <VictoryLabel text="Title" x={300} y={30} textAnchor="middle"/>
+            <VictoryLabel text="Title" style ={{ fontSize: 30}} x={300} y={30} textAnchor="middle"/>
             <VictoryBar style={{ data: { fill: "green" } }} data={data} x="x" y="y"/>
             <VictoryAxis label="x-axis" style={{ axisLabel: {padding: 30}}}/>
             <VictoryAxis dependentAxis label="y-axis" style={{ axisLabel: {padding: 40}}}/>

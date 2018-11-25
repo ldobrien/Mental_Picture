@@ -34,7 +34,7 @@ class Mood extends Component {
               />
             }
           >
-            <VictoryLabel text="Title" x={300} y={30} textAnchor="middle"/>
+            <VictoryLabel text="Title" style ={{ fontSize: 30}} x={300} y={30} textAnchor="middle"/>
             <VictoryAxis label="x-axis" style={{ axisLabel: {padding: 30}}}/>
             <VictoryAxis dependentAxis label="y-axis" style={{ axisLabel: {padding: 40}}}/>
             <VictoryLine
