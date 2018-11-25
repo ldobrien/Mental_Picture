@@ -90,6 +90,33 @@ const insertDocuments = function(db, data,callback) {
     });
 }
 
+function getAll()
+{
+    client.connect(function(err){
+        assert.equal(null, err)
+        console.log("Connected successfully to server")
+        const db = client.db(dbName);
+        getDocuments(db, function(){
+            client.close();
+        });
+    });
+}
+ const getDocuments = function(db, callback)
+{
+    const col = db.collection('hack');
+    col.find().sort({"obj.date":-1}).limit(10).toArray(function(err, res)
+    {
+        if(err){
+            console.log("ERROR: " + err)
+        } else {
+            console.log("Found the following records");
+            console.log(res)
+            return res;
+        }
+    });
+    
+}
+
 let current = new Date().toLocaleString(undefined, {
 	day: 'numeric',
 	month: 'numeric',
@@ -99,6 +126,7 @@ let a =JSON.stringify(current);
 
 //insertData(`{"date": ${a}, "diet":5, "exercise":6, "sleep":12, "mood":4}`);
 //getData("2018-11-24");
+getAll();
 
 module.exports.insertData = insertData;
 module.exports.getData = getData;
